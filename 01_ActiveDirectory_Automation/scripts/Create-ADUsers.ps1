@@ -3,8 +3,14 @@
     Creates Active Directory users from a CSV file.
 
 .DESCRIPTION
-    This script reads user data from a CSV file (new_users.csv) and creates
-    each user in the specified Organizational Unit (OU) in Active Directory.
+    Reads user data from a CSV file and creates each user in the specified Organizational Unit (OU) in Active Directory.
+    Requires the Active Directory module and appropriate permissions.
+
+.PARAMETER CsvPath
+    Path to the CSV file containing user data.
+
+.EXAMPLE
+    .\Create-ADUsers.ps1
 
 .NOTES
     Author: Ludvig Almvaang
@@ -45,7 +51,7 @@ foreach ($User in $Users) {
             -GivenName $User.FirstName `
             -Surname $User.LastName `
             -SamAccountName $User.Username `
-            -UserPrincipalName "$($User.Username)@example.com" `
+            -UserPrincipalName "$($User.Username)@galactic.empire.local" `
             -AccountPassword (ConvertTo-SecureString $User.Password -AsPlainText -Force) `
             -Enabled $true `
             -Path $OUPath `
