@@ -5,7 +5,6 @@ This lab automates the setup of Active Directory, Organizational Units, users, G
 ## Prerequisites
 - Windows Server with administrative privileges
 - PowerShell (run scripts as Administrator)
-- Active Directory Domain Services installed (or install via script)
 - Network share accessible for wallpaper deployment (if using Navy wallpaper GPO)
 - Review all scripts before running in production
 
