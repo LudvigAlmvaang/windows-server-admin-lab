@@ -11,7 +11,7 @@
 # Define script paths
 $ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Scripts = @(
-    "Install-ADDS-and-DNS.ps1",
+    "Install-ServerRoles.ps1",
     "Bulk-OU-Creation.ps1",
     "Create-ADUsers.ps1",
     "Configure-GPO.ps1"

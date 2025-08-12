@@ -9,7 +9,7 @@ This lab automates the setup of Active Directory, Organizational Units, users, G
 - Review all scripts before running in production
 
 ## Script Execution Order
-1. **Install-ADDS-and-DNS.ps1**
+1. **Install-ServerRoles.ps1**
    - Configures network adapter with static IP (192.168.0.25)
    - Installs AD DS and DNS roles
    - Promotes the server to a domain controller

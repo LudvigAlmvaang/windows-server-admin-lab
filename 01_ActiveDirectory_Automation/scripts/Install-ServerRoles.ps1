@@ -45,7 +45,8 @@ Try {
 
 # Configure DNS forwarding for external queries
 Try {
-    $Forwarders = @("1.1.1.1", "1.0.0.1")
+    # 1.1.1.3 and 1.0.0.3 is the Malware and Adult Content Blocking DNS by Cloudflare
+    $Forwarders = @("1.1.1.3", "1.0.0.3")
     Set-DnsServerForwarder -IPAddress $Forwarders -PassThru -ErrorAction Stop
     Write-Host "Configured DNS forwarders: $($Forwarders -join ', ')" -ForegroundColor Green
 } Catch {
