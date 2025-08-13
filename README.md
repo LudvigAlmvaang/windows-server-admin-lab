@@ -17,5 +17,8 @@ This project is a personal portfolio to demonstrate my practical Windows Server 
 - [Download Evaluation ISO](https://go.microsoft.com/fwlink/?linkid=2293312&clcid=0x409&culture=en-us&country=us)
 - Version: 26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso
 
+### ServerRoles.ps1 cannot be loaded. The file ServerRoles.ps1 is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+- run ```Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass``` in PowerShell before executing the script.
+
 ---
 Created and maintained by Ludvig Almvaang.
