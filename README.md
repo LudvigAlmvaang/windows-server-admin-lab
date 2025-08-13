@@ -39,5 +39,11 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 For more information, see [about_Execution_Policies](https://go.microsoft.com/fwlink/?LinkID=135170).
 
+## Join a User Computer to the Domain
+To join a user computer to the domain `galactic.empire.local`, run this as Administrator:
+```
+Set-DnsClientServerAddress -InterfaceAlias (Get-NetAdapter | Where-Object {$_.Status -eq 'Up'} | Select-Object -First 1).Name -ServerAddresses 192.168.0.25; Add-Computer -DomainName galactic.empire.local -Restart
+```
+
 ---
 Created and maintained by Ludvig Almvaang.
