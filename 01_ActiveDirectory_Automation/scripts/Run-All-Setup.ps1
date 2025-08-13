@@ -11,7 +11,7 @@
 # Define script paths
 $ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Scripts = @(
-    "IInstall-ServerRoles.ps1",
+    "Install-ServerRoles.ps1",
     "Bulk-OU-Creation.ps1",
     "Create-ADUsers.ps1",
     "Configure-GPO.ps1"
@@ -24,7 +24,7 @@ foreach ($Script in $Scripts) {
         Try {
             & $ScriptPath
         } Catch {
-            Write-Warning "Error running $Script: $($_)"
+            Write-Warning ("Error running $Script: $_")
             Exit 1
         }
     } else {
