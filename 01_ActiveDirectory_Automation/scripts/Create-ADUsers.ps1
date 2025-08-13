@@ -18,7 +18,7 @@
 #>
 
 # Path to the CSV file
-$CsvPath = "..\ExampleData\new_users.csv"
+$CsvPath = Join-Path $PSScriptRoot "..\ExampleData\new_users.csv"
 
 # Set your AD domain components here
 $DomainDN = "DC=galactic,DC=empire,DC=local"
@@ -36,7 +36,8 @@ Try {
 foreach ($User in $Users) {
     $FullName = "$($User.FirstName) $($User.LastName)"
     $OUName = $User.OU
-    $OUPath = "OU=$OUName,$DomainDN"
+    # Place users in the Users sub-OU within their main OU
+    $OUPath = "OU=Users,OU=$OUName,$DomainDN"
 
     # Skip if any required field is missing
     if (-not $User.FirstName -or -not $User.LastName -or -not $User.Username -or -not $User.Password -or -not $User.OU) {
@@ -58,7 +59,7 @@ foreach ($User in $Users) {
             -ChangePasswordAtLogon $false `
             -PasswordNeverExpires $true
 
-        Write-Host "Created user: $FullName in OU: $OUName" -ForegroundColor Cyan
+        Write-Host "Created user: $FullName in OU: $OUName\\Users" -ForegroundColor Cyan
     } Catch {
         Write-Warning "Failed to create user: $FullName. Error: $_"
     }
