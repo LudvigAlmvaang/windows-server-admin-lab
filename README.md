@@ -21,7 +21,7 @@ This project is a personal portfolio to demonstrate my practical Windows Server 
 ## Quick Download & Extract
 To download and extract this lab to `C:\Temp` in one line, run:
 ```
-Invoke-WebRequest -Uri 'https://github.com/LudvigAlmvaang/windows-server-admin-lab/archive/refs/heads/main.zip' -OutFile 'C:\Temp\lab.zip'; Expand-Archive -Path 'C:\Temp\lab.zip' -DestinationPath 'C:\Temp' -Force
+New-Item -ItemType Directory -Path 'C:\Temp' -Force | Out-Null; Invoke-WebRequest -Uri 'https://github.com/LudvigAlmvaang/windows-server-admin-lab/archive/refs/heads/main.zip' -OutFile 'C:\Temp\lab.zip'; Expand-Archive -Path 'C:\Temp\lab.zip' -DestinationPath 'C:\Temp' -Force
 ```
 
 ## Script Execution Policy
