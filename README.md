@@ -45,5 +45,9 @@ To join a user computer to the domain `galactic.empire.local`, run this as Admin
 Set-DnsClientServerAddress -InterfaceAlias (Get-NetAdapter | Where-Object {$_.Status -eq 'Up'} | Select-Object -First 1).Name -ServerAddresses 192.168.0.25; Add-Computer -DomainName galactic.empire.local -Restart
 ```
 
+## Screenshots
+
+![Running Server](Docs/Screenshots/running_server.png)
+
 ---
 Created and maintained by Ludvig Almvaang.
