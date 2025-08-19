@@ -48,6 +48,7 @@ Set-DnsClientServerAddress -InterfaceAlias (Get-NetAdapter | Where-Object {$_.St
 ## Screenshots
 
 ![Running Server](Docs/Screenshots/running_server.png)
+![Domain Joined Computer](Docs/Screenshots/domain_joined_computer.png)
 
 ---
 Created and maintained by Ludvig Almvaang.
