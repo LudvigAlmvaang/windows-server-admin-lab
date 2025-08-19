@@ -48,7 +48,10 @@ Set-DnsClientServerAddress -InterfaceAlias (Get-NetAdapter | Where-Object {$_.St
 ## Screenshots
 
 ![Running Server](Docs/Screenshots/running_server.png)
-![Domain Joined Computer](Docs/Screenshots/domain_joined_computer.png)
+*Screenshot of the Windows Server running in Server Core mode (no graphical user interface, only terminal).*
+
+![Domain Joined Client](Docs/Screenshots/domain_joined_client.png)
+*Screenshot of a client computer successfully joined to the domain.*
 
 ---
 Created and maintained by Ludvig Almvaang.
